@@ -6,10 +6,7 @@
 <title>Tuttor-Up | La plataforma educativa que te eleva</title>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-<!-- HubSpot Tracking Code — reemplaza YOUR_PORTAL_ID -->
-<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/YOUR_PORTAL_ID.js"></script>
-<script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/embed/v2.js"></script>
-
+<!-- Se elimina el cargador global de HubSpot en <head> porque usamos el embed directo dentro del formulario -->
 <link rel="stylesheet" href="styles/styles.css">
 
 </head>
@@ -431,40 +428,11 @@
       <h2>Comienza tu viaje<br><span class="teal">educativo hoy.</span></h2>
       <p>Regístrate y recibe tu primera sesión de tutoría completamente gratuita. Sin tarjeta de crédito requerida.</p>
 
-      <!-- HUBSPOT FORM EMBED -->
-      <!-- Reemplaza YOUR_PORTAL_ID y YOUR_FORM_ID con tus credenciales reales de HubSpot -->
-      <div id="hbspt-cta">
-        <!-- El form de HubSpot se inyecta aquí automáticamente vía JS -->
-      </div>
-
-      <!-- FORMULARIO MANUAL (visible si HubSpot no carga) -->
-      <div class="hs-form-wrapper" id="manual-form">
-        <div class="form-row-2">
-          <input type="text"   class="fld" placeholder="Nombre" id="f-name">
-          <input type="text"   class="fld" placeholder="Apellido" id="f-last">
-        </div>
-        <input type="email"  class="fld" placeholder="Correo electrónico" id="f-email" style="width:100%">
-        <input type="tel"    class="fld" placeholder="Teléfono / WhatsApp" id="f-phone" style="width:100%">
-        <select class="fld fld-select" id="f-role" style="width:100%;color:var(--gray)">
-          <option value="" disabled selected>¿Eres estudiante o tutor?</option>
-          <option value="student">Estudiante — quiero aprender</option>
-          <option value="tutor">Tutor — quiero enseñar</option>
-        </select>
-        <select class="fld fld-select" id="f-subject" style="width:100%;color:var(--gray)">
-          <option value="" disabled selected>¿Qué materia te interesa?</option>
-          <option>Matemáticas / Cálculo</option>
-          <option>Física</option>
-          <option>Química</option>
-          <option>Programación</option>
-          <option>Inglés</option>
-          <option>Otra materia</option>
-        </select>
-        <button class="btn-teal" style="width:100%;justify-content:center;margin-top:4px;" onclick="submitHubSpot()">
-          Obtener sesión gratis
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-        </button>
-        <p class="privacy-txt">🔒 Tus datos están protegidos. No enviamos spam. Puedes cancelar cuando quieras.</p>
-      </div>
+      <!-- HubSpot form embed directo -->
+      <!-- Este fragmento reemplaza la integración previa de hbspt.forms.create y elimina el formulario manual de fallback -->
+      <script src="https://js.hsforms.net/forms/embed/51296735.js" defer></script>
+      <div class="hs-form-frame" data-region="na1" data-form-id="98cd997f-f41b-462b-960c-1bbdf62d3bf1" data-portal-id="51296735"></div>
+      <!-- Fin del embed de HubSpot -->
 
     </div>
   </div>
@@ -647,7 +615,7 @@
     </div>
 
     <div class="foot-bottom">
-      <p>© 2025 Tuttor-Up SAS — Bogotá, Colombia. Todos los derechos reservados.</p>
+      <p>© 2026 Tuttor-Up SAS (ELMER C,JOSE G,NICOLAS A,ALEJANDRO R) — Bogotá, Colombia. Todos los derechos reservados.</p>
       <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;">
         <span class="hs-badge">
           <svg width="12" height="12" viewBox="0 0 24 24" fill="#FF8A30"><circle cx="12" cy="12" r="10"/></svg>
@@ -664,69 +632,13 @@
      SCRIPTS
 ════════════════════════════════════════ -->
 <script>
+/* ── HubSpot embed directo aplicado: no se usa hbspt.forms.create ni formulario manual de fallback ── */
 /* ── FAQ TOGGLE ── */
 function toggleFaq(el) {
   const item = el.closest('.faq-item');
   const isOpen = item.classList.contains('open');
   document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
   if (!isOpen) item.classList.add('open');
-}
-
-/* ── HUBSPOT FORM INIT ── */
-/* Reemplaza portalId y formId con tus credenciales reales de HubSpot */
-window.onload = function() {
-  if (typeof hbspt !== 'undefined') {
-    hbspt.forms.create({
-      region:   "na1",            // Cambia según tu región HubSpot
-      portalId: "YOUR_PORTAL_ID", // Tu Portal ID de HubSpot
-      formId:   "YOUR_FORM_ID",   // ID del formulario creado en HubSpot
-      target:   "#hbspt-cta",
-      onFormReady: function() {
-        // Ocultar el formulario manual si HubSpot cargó correctamente
-        var manual = document.getElementById('manual-form');
-        if (manual) manual.style.display = 'none';
-      }
-    });
-  }
-};
-
-/* ── FORMULARIO MANUAL → ENVÍO A HUBSPOT API ── */
-function submitHubSpot() {
-  const portalId = 'YOUR_PORTAL_ID'; // Reemplaza
-  const formId   = 'YOUR_FORM_ID';   // Reemplaza
-
-  const payload = {
-    fields: [
-      { name: 'firstname',  value: document.getElementById('f-name').value },
-      { name: 'lastname',   value: document.getElementById('f-last').value },
-      { name: 'email',      value: document.getElementById('f-email').value },
-      { name: 'phone',      value: document.getElementById('f-phone').value },
-      { name: 'jobtitle',   value: document.getElementById('f-role').value },
-      { name: 'subject__tuttorup', value: document.getElementById('f-subject').value }
-    ],
-    context: {
-      pageUri: window.location.href,
-      pageName: document.title
-    }
-  };
-
-  fetch(`https://api.hsforms.com/submissions/v3/integration/submit/${portalId}/${formId}`, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(payload)
-  })
-  .then(r => r.json())
-  .then(data => {
-    document.getElementById('manual-form').innerHTML =
-      `<div style="text-align:center;padding:2rem 0;">
-        <div style="font-size:3rem;margin-bottom:1rem;"><img src="assets/images/Buho.png" alt="" style="width:48px;height:48px;object-fit:contain;vertical-align:middle;margin-right:0.35rem;">✅</div>
-        <h3 style="color:var(--teal);font-family:var(--font-disp);font-size:1.8rem;margin-bottom:0.5rem;">¡Listo! Ya eres parte de Tuttor-Up</h3>
-        <p style="color:var(--gray);max-width:400px;margin:0 auto;">Revisa tu correo — te enviaremos el link para tu primera sesión gratis en los próximos minutos.</p>
-      </div>`;
-  })
-  .catch(() => {
-    alert('Ocurrió un error al enviar el formulario. Por favor intenta de nuevo.');
-  });
 }
 
 /* ── HEADER SCROLL EFFECT ── */
