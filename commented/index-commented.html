@@ -1,0 +1,1079 @@
+<!-- 
+╔══════════════════════════════════════════════════════════════════════════╗
+║                    TUTTOR-UP LANDING PAGE                                ║
+║              Plataforma de Tutorías 1 a 1 en Colombia                    ║
+║                                                                           ║
+║  DESCRIPCIÓN: Página de ventas optimizada para conversión de leads       ║
+║  diseñada con metodología conversion-focused copywriting                 ║
+╚══════════════════════════════════════════════════════════════════════════╝
+-->
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <!-- ═══════════════════════════════════════════════════════════════════
+       META TAGS & CONFIGURACIÓN GENERAL
+       ═══════════════════════════════════════════════════════════════════ -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tuttor-Up | La plataforma educativa que te eleva</title>
+  
+  <!-- Fuentes externas de Google Fonts -->
+  <!-- Barlow Condensed: Títulos grandes y audaces -->
+  <!-- Space Grotesk: Cuerpo de texto y descripción -->
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- ═══════════════════════════════════════════════════════════════════
+       HUBSPOT INTEGRATION
+       IMPORTANTE: Reemplaza YOUR_PORTAL_ID con tu portal ID real
+       ═══════════════════════════════════════════════════════════════════ -->
+  <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/YOUR_PORTAL_ID.js"></script>
+  <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/embed/v2.js"></script>
+
+  <!-- Enlace a la hoja de estilos externa -->
+  <link rel="stylesheet" href="styles/styles.css">
+</head>
+
+<body>
+
+<!-- ═════════════════════════════════════════════════════════════════════════════════
+     SECCIÓN 1: HEADER (Navegación Principal)
+     
+     OBJETIVOS:
+     - Mantener visibilidad del logo en todo momento
+     - Facilitar navegación rápida a secciones clave
+     - Botones de CTA (Call-To-Action) prominentes
+     ═════════════════════════════════════════════════════════════════════════════════ -->
+<header>
+  <nav>
+    <!-- Logo + Marca -->
+    <a href="#" class="nav-logo">
+      <!-- Logo de la marca (búho) -->
+      <img src="assets/images/Buho.png" alt="Tuttor-Up" class="nav-logo-img">
+      <!-- Texto de marca con color destacado -->
+      TUTTOR<span>-UP</span>
+    </a>
+
+    <!-- Links de navegación internos -->
+    <ul class="nav-links">
+      <li><a href="#beneficios">Beneficios</a></li>
+      <li><a href="#producto">Cómo funciona</a></li>
+      <li><a href="#testimonios">Testimonios</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ul>
+
+    <!-- Botones de acción primarios -->
+    <div class="nav-actions">
+      <!-- Botón secundario: login -->
+      <a href="#cta2" class="btn-outline">Iniciar sesión</a>
+      <!-- Botón primario: signup + icono de flecha -->
+      <a href="#cta2" class="btn-teal">
+        Comenzar gratis
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <line x1="5" y1="12" x2="19" y2="12"/>
+          <polyline points="12 5 19 12 12 19"/>
+        </svg>
+      </a>
+    </div>
+  </nav>
+</header>
+
+
+<!-- ═════════════════════════════════════════════════════════════════════════════════
+     SECCIÓN 2: HERO SECTION (Primera impresión + Proposición de valor)
+     
+     ESTRUCTURA:
+     - Left: Headline + CTA + Social proof (estadísticas)
+     - Right: Animación visual (búho + efectos)
+     
+     OBJETIVOS:
+     - Captar atención en primeros 3 segundos
+     - Comunicar valor único
+     - Generar urgencia / confianza
+     ═════════════════════════════════════════════════════════════════════════════════ -->
+<section id="hero">
+  <!-- Elementos visuales de fondo -->
+  <div class="glow-blob"></div>
+  <div class="glow-blob" style="width:400px;height:400px;background:radial-gradient(circle,rgba(15,52,96,0.5) 0%,transparent 70%);bottom:0;left:-100px;"></div>
+  <!-- Logo grande sutil de fondo -->
+  <div class="hero-bg-logo"></div>
+
+  <!-- Contenedor de dos columnas -->
+  <div class="wrapper hero-grid">
+    
+    <!-- COLUMNA IZQUIERDA: Texto + CTAs -->
+    <div>
+      <!-- Badge/chip: resalta una característica clave -->
+      <div class="hero-eyebrow">
+        <span class="dot"></span>
+        Plataforma #1 de tutorías en Colombia
+      </div>
+
+      <!-- Headline principal (máxima impacto) -->
+      <h1 class="hero-title">
+        APRENDE SIN
+        <span class="teal-line">LÍMITES.</span>
+        CRECE SIN
+        <span class="teal-line">FRONTERAS.</span>
+      </h1>
+
+      <!-- Descripción de beneficio -->
+      <p class="hero-desc">
+        Tuttor-Up conecta estudiantes con tutores expertos para sesiones 1 a 1 
+        completamente personalizadas. Disponible 24/7, desde cualquier lugar.
+      </p>
+
+      <!-- Botones de acción -->
+      <div class="hero-btns">
+        <a href="#cta2" class="btn-teal">
+          Empieza gratis
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <line x1="5" y1="12" x2="19" y2="12"/>
+            <polyline points="12 5 19 12 12 19"/>
+          </svg>
+        </a>
+        <a href="#producto" class="btn-outline">Ver cómo funciona</a>
+      </div>
+
+      <!-- Social proof: Estadísticas que generan confianza -->
+      <div class="hero-stats">
+        <div class="stat">
+          <span class="num">+5.000</span>
+          <span class="lbl">Estudiantes activos</span>
+        </div>
+        <div class="stat">
+          <span class="num">+300</span>
+          <span class="lbl">Tutores expertos</span>
+        </div>
+        <div class="stat">
+          <span class="num">4.9★</span>
+          <span class="lbl">Calificación promedio</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- COLUMNA DERECHA: Elementos visuales animados -->
+    <div class="hero-visual">
+      <!-- Anillos concéntricos con animación de expansión -->
+      <div class="owl-glow-ring"></div>
+      <div class="owl-glow-ring"></div>
+      <div class="owl-glow-ring"></div>
+
+      <!-- Búho central con animación de flotación -->
+      <div class="owl-center">
+        <div class="owl-body"></div>
+      </div>
+
+      <!-- 4 tarjetas flotantes con información contextual -->
+      <!-- Tarjeta 1: Materia disponible -->
+      <div class="fc">
+        <h4>📐 Matemáticas</h4>
+        <p>Tutor disponible ahora</p>
+      </div>
+
+      <!-- Tarjeta 2: Materia disponible -->
+      <div class="fc">
+        <h4>🧪 Química</h4>
+        <p>Sesión en 5 min</p>
+      </div>
+
+      <!-- Tarjeta 3: Materia disponible (OCULTA en CSS) -->
+      <div class="fc">
+        <h4>💻 Programación</h4>
+        <p>12 tutores activos</p>
+      </div>
+
+      <!-- Tarjeta 4: Rating/valoración (OCULTA en CSS) -->
+      <div class="fc">
+        <h4>⭐ 4.9 / 5.0</h4>
+        <p>Última evaluación</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═════════════════════════════════════════════════════════════════════════════════
+     SECCIÓN 3: BENEFICIOS (Características con iconos SVG)
+     
+     ESTRUCTURA:
+     - 6 tarjetas en grid 3 columnas
+     - Cada tarjeta: icono + título + descripción + etiqueta
+     
+     OBJETIVOS:
+     - Detallar qué diferencia a Tuttor-Up
+     - Usar iconos visuales para escaneo rápido
+     - Resolver objeciones iniciales
+     ═════════════════════════════════════════════════════════════════════════════════ -->
+<section id="beneficios">
+  <!-- Efecto visual de fondo -->
+  <div class="glow-blob"></div>
+  
+  <div class="wrapper">
+    <!-- Encabezado de sección -->
+    <div class="ben-header">
+      <span class="section-chip">Beneficios</span>
+      <h2>No solo aprendes más rápido.<br><span class="teal">Aprendes mejor.</span></h2>
+      <p>Cada característica de Tuttor-Up está diseñada para transformar la forma 
+      en que estudias y alcanzas tus metas académicas.</p>
+    </div>
+
+    <!-- Grid de 6 tarjetas de beneficios -->
+    <div class="ben-grid">
+
+      <!-- TARJETA 1: Aprendizaje personalizado -->
+      <div class="ben-card glass-card">
+        <div class="ben-icon teal">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="12" cy="12" r="7"/><circle cx="12" cy="12" r="3"/>
+            <line x1="12" y1="2" x2="12" y2="6"/><line x1="12" y1="18" x2="12" y2="22"/>
+            <line x1="2" y1="12" x2="6" y2="12"/><line x1="18" y1="12" x2="22" y2="12"/>
+          </svg>
+        </div>
+        <h3>Aprendizaje 100% personalizado</h3>
+        <p>Tu tutor adapta cada sesión a tu ritmo, estilo de aprendizaje y objetivos 
+        específicos. No hay dos clases iguales.</p>
+        <span class="feature-pill">Sesiones 1 a 1</span>
+      </div>
+
+      <!-- TARJETA 2: Resultados rápidos -->
+      <div class="ben-card glass-card">
+        <div class="ben-icon teal">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <polyline points="13 2 3 14 11 14 9 22 21 10 13 10 13 2"/>
+          </svg>
+        </div>
+        <h3>Resultados en tiempo récord</h3>
+        <p>El enfoque personalizado reduce a la mitad el tiempo de comprensión. 
+        Más rendimiento académico, menos esfuerzo perdido.</p>
+        <span class="feature-pill">+40% eficiencia</span>
+      </div>
+
+      <!-- TARJETA 3: Disponibilidad 24/7 -->
+      <div class="ben-card glass-card">
+        <div class="ben-icon orange">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="12" cy="12" r="7"/><path d="M5 12h14"/>
+            <path d="M12 5a15 15 0 0 1 0 14"/><path d="M8.5 4.5a15 15 0 0 0 0 15"/>
+          </svg>
+        </div>
+        <h3>Disponible 24/7 desde cualquier lugar</h3>
+        <p>Estudia cuando quieras y desde donde estés. La plataforma funciona en 
+        celular, tablet y computador sin restricciones.</p>
+        <span class="feature-pill">Sin horarios fijos</span>
+      </div>
+
+      <!-- TARJETA 4: Tutores verificados -->
+      <div class="ben-card glass-card">
+        <div class="ben-icon teal">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <polygon points="5 7 12 3 19 7 12 11 5 7"/>
+            <path d="M5 7v5c0 .55.45 1 1 1h12c.55 0 1-.45 1-1V7"/><path d="M12 11v8"/><path d="M8 19h8"/>
+          </svg>
+        </div>
+        <h3>Tutores verificados y certificados</h3>
+        <p>Cada tutor pasa por un proceso riguroso de selección. Conocimiento profundo, 
+        experiencia docente y calificaciones comprobadas.</p>
+        <span class="feature-pill">+300 expertos</span>
+      </div>
+
+      <!-- TARJETA 5: Seguimiento de progreso -->
+      <div class="ben-card glass-card">
+        <div class="ben-icon orange">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <rect x="4" y="12" width="4" height="8"/><rect x="10" y="8" width="4" height="12"/>
+            <rect x="16" y="4" width="4" height="16"/>
+          </svg>
+        </div>
+        <h3>Seguimiento del progreso en tiempo real</h3>
+        <p>Panel de control con métricas claras: sesiones completadas, temas dominados 
+        y áreas de mejora identificadas automáticamente.</p>
+        <span class="feature-pill">Dashboard analítico</span>
+      </div>
+
+      <!-- TARJETA 6: Comunidad y soporte -->
+      <div class="ben-card glass-card">
+        <div class="ben-icon teal">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M4 4h16v10H8l-4 4V4z"/><path d="M8 8h8"/><path d="M8 12h5"/>
+          </svg>
+        </div>
+        <h3>Comunidad y soporte continuo</h3>
+        <p>Accede a foros de estudio, grupos de repaso y soporte técnico inmediato. 
+        Nunca estás solo en tu proceso de aprendizaje.</p>
+        <span class="feature-pill">Red de estudio</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ═════════════════════════════════════════════════════════════════════════════════
+     SECCIÓN 4: CTA 1 - URGENCIA (Call To Action intermedio)
+     
+     OBJETIVO: Convertir de nuevo, crear urgencia con oferta limitada
+     ═════════════════════════════════════════════════════════════════════════════════ -->
+<section id="cta1">
+  <div class="wrapper">
+    <div class="cta1-inner">
+      <!-- Texto de urgencia y propuesta -->
+      <div class="cta1-text">
+        <div class="urgency-chip">
+          🔥 Oferta limitada — solo esta semana
+        </div>
+        <h2>Tu primera sesión es<br><span class="teal">completamente gratis.</span></h2>
+        <p>Sin tarjeta de crédito. Sin compromisos. Conecta con un tutor experto 
+        en los próximos 5 minutos y descubre la diferencia.</p>
+      </div>
+      <!-- Botones de acción -->
+      <div class="cta1-actions">
+        <a href="#cta2" class="btn-teal">
+          Reclamar sesión gratis
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+          </svg>
+        </a>
+        <a href="#producto" class="btn-outline">Ver cómo funciona</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═════════════════════════════════════════════════════════════════════════════════
+     SECCIÓN 5: EXPLICACIÓN DEL PRODUCTO (How it works)
+     
+     ESTRUCTURA:
+     - Left: 4 pasos numerados
+     - Right: Mock-up de la aplicación
+     
+     OBJETIVOS:
+     - Simplificar el proceso de onboarding
+     - Mostrar UX/UI de la plataforma
+     - Eliminar fricción percibida
+     ═════════════════════════════════════════════════════════════════════════════════ -->
+<section id="producto">
+  <!-- Efecto visual de fondo -->
+  <div class="glow-blob"></div>
+  
+  <div class="wrapper prod-grid">
+
+    <!-- PARTE IZQUIERDA: Pasos numerados -->
+    <div>
+      <span class="section-chip">Cómo funciona</span>
+      <h2>En 4 pasos ya estás<br><span class="teal">aprendiendo.</span></h2>
+      
+      <div class="prod-steps">
+        <!-- PASO 1 -->
+        <div class="step">
+          <div class="step-num">01</div>
+          <div>
+            <h3>Crea tu cuenta</h3>
+            <p>Regístrate en menos de 2 minutos. Cuéntanos tu nivel, materia y objetivos académicos.</p>
+          </div>
+        </div>
+
+        <!-- PASO 2 -->
+        <div class="step">
+          <div class="step-num">02</div>
+          <div>
+            <h3>Elige tu tutor ideal</h3>
+            <p>Filtra por materia, disponibilidad, calificaciones y precio. Lee reseñas reales de otros estudiantes.</p>
+          </div>
+        </div>
+
+        <!-- PASO 3 -->
+        <div class="step">
+          <div class="step-num">03</div>
+          <div>
+            <h3>Agenda tu sesión</h3>
+            <p>Selecciona fecha y hora. La plataforma confirma al instante y te envía recordatorios automáticos.</p>
+          </div>
+        </div>
+
+        <!-- PASO 4 -->
+        <div class="step">
+          <div class="step-num">04</div>
+          <div>
+            <h3>Aprende y evalúa</h3>
+            <p>Sesión en vivo con pizarrón digital, chat y recursos compartidos. Al terminar, califica a tu tutor.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PARTE DERECHA: Mock-up del Dashboard -->
+    <div class="app-mockup">
+      <!-- Barra superior del mock -->
+      <div class="mock-topbar">
+        <div class="mock-dots">
+          <span style="background:#e74c3c;"></span>
+          <span style="background:#f5a623;"></span>
+          <span style="background:#00d4b8;"></span>
+        </div>
+        <span style="font-family:var(--font-disp);font-size:0.7rem;color:var(--gray);letter-spacing:0.08em;">TUTTOR-UP — DASHBOARD</span>
+        <img src="assets/images/Buho.png" alt="Tuttor-Up" style="width:18px;height:18px;object-fit:contain;vertical-align:middle;">
+      </div>
+
+      <!-- Contenido del mock -->
+      <div class="mock-body">
+        <!-- Barra de búsqueda -->
+        <div class="mock-search">
+          <span>🔍</span> Buscar tutor o materia...
+        </div>
+
+        <!-- Materias populares -->
+        <div style="font-family:var(--font-disp);font-size:0.7rem;font-weight:800;color:var(--teal);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:10px;">Materias populares</div>
+        <div class="mock-subjects">
+          <div class="mock-subject">
+            <div class="subj-name">CÁLCULO</div>
+            <div class="subj-count">48 tutores</div>
+          </div>
+          <div class="mock-subject">
+            <div class="subj-name">FÍSICA</div>
+            <div class="subj-count">36 tutores</div>
+          </div>
+          <div class="mock-subject">
+            <div class="subj-name">QUÍMICA</div>
+            <div class="subj-count">29 tutores</div>
+          </div>
+          <div class="mock-subject">
+            <div class="subj-name">CÓDIGO</div>
+            <div class="subj-count">52 tutores</div>
+          </div>
+        </div>
+
+        <!-- Tutores en vivo -->
+        <div style="font-family:var(--font-disp);font-size:0.7rem;font-weight:800;color:var(--teal);letter-spacing:0.1em;text-transform:uppercase;margin:14px 0 10px;">Tutores en vivo ahora</div>
+        
+        <!-- Tarjeta de tutor 1 -->
+        <div class="mock-tutor" style="margin-bottom:10px;">
+          <div class="mock-avatar">JP</div>
+          <div class="mock-tutor-info">
+            <div class="t-name">Juan Pablo R.</div>
+            <div class="t-sub">Cálculo III · ⭐ 4.9</div>
+          </div>
+          <span class="live-badge">EN VIVO</span>
+        </div>
+
+        <!-- Tarjeta de tutor 2 -->
+        <div class="mock-tutor">
+          <div class="mock-avatar" style="background:linear-gradient(135deg,var(--orange),#0f3460);">MC</div>
+          <div class="mock-tutor-info">
+            <div class="t-name">María C. Torres</div>
+            <div class="t-sub">Química Org. · ⭐ 4.8</div>
+          </div>
+          <span class="live-badge">EN VIVO</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ═════════════════════════════════════════════════════════════════════════════════
+     SECCIÓN 6: TESTIMONIOS (Social Proof)
+     
+     OBJETIVO:
+     - Generar confianza mediante experiencias reales
+     - Mostrar diversidad de usuarios (estudiante, tutor, trabajador)
+     - Incluir métricas de validación (ratings, números)
+     ═════════════════════════════════════════════════════════════════════════════════ -->
+<section id="testimonios">
+  <!-- Efecto visual de fondo -->
+  <div class="glow-blob"></div>  
+  <div class="wrapper">
+    <!-- Encabezado de sección -->
+    <div class="test-header">
+      <span class="section-chip">Testimonios</span>
+      <h2>Lo que dicen nuestros<br><span class="teal">estudiantes reales.</span></h2>
+      <p>Más de 5.000 estudiantes en toda Colombia ya transformaron su rendimiento académico con Tuttor-Up.</p>
+    </div>
+
+    <!-- Grid de 6 testimonios -->
+    <div class="test-grid">
+
+      <!-- TESTIMONIO 1: Mejora académica -->
+      <div class="test-card glass-card">
+        <div class="stars">★★★★★</div>
+        <p class="test-quote">"Reprobé cálculo dos veces antes de Tuttor-Up. Con mi tutor lo entendí en 3 semanas. 
+        Pasé con 4.2. Literalmente me salvó el semestre."</p>
+        <div class="test-author">
+          <div class="ava teal">AN</div>
+          <div>
+            <div class="a-name">Alejandra Nieto</div>
+            <div class="a-role">Ing. de Sistemas · U. Nacional</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TESTIMONIO 2: Flexibilidad -->
+      <div class="test-card glass-card">
+        <div class="stars">★★★★★</div>
+        <p class="test-quote">"Lo mejor es que puedes elegir el tutor que más te funciona. Probé tres y encontré uno 
+        que explica exactamente como yo aprendo. Increíble."</p>
+        <div class="test-author">
+          <div class="ava orange">DM</div>
+          <div>
+            <div class="a-name">Daniel Moreno</div>
+            <div class="a-role">Preuniversitario · Bogotá</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TESTIMONIO 3: Perspectiva de tutor -->
+      <div class="test-card glass-card">
+        <div class="stars">★★★★★</div>
+        <p class="test-quote">"Soy tutora en la plataforma y ha cambiado mi vida. Genero ingresos desde casa, con mis 
+        horarios, y la comunidad de estudiantes es muy comprometida."</p>
+        <div class="test-author">
+          <div class="ava blue">LP</div>
+          <div>
+            <div class="a-name">Laura Pedraza</div>
+            <div class="a-role">Tutora de Física · Uniandes</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TESTIMONIO 4: Disponibilidad 24/7 -->
+      <div class="test-card glass-card">
+        <div class="stars">★★★★★</div>
+        <p class="test-quote">"Tengo trabajo y familia. Las clases 24/7 me permitieron estudiar de noche sin interrumpir 
+        mi rutina. Subí 1.5 puntos en mi promedio general."</p>
+        <div class="test-author">
+          <div class="ava teal">CR</div>
+          <div>
+            <div class="a-name">Carlos Reyes</div>
+            <div class="a-role">Adulto mayor · U. Abierta</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TESTIMONIO 5: Experiencia de plataforma -->
+      <div class="test-card glass-card">
+        <div class="stars">★★★★★</div>
+        <p class="test-quote">"La pizarra digital en vivo hace que se sienta como estar en físico. Puedo dibujar gráficas, 
+        el tutor corrige en tiempo real. Muy buena experiencia."</p>
+        <div class="test-author">
+          <div class="ava orange">SF</div>
+          <div>
+            <div class="a-name">Sofía Fuentes</div>
+            <div class="a-role">Matemáticas · Colegio CFEN</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TESTIMONIO 6: Validación social -->
+      <div class="test-card glass-card">
+        <div class="stars">★★★★★</div>
+        <p class="test-quote">"Lo recomendé a 6 compañeros. Todos mejoraron. La diferencia con YouTube es que el tutor 
+        te responde, te corrige y te explica según TU error específico."</p>
+        <div class="test-author">
+          <div class="ava blue">MG</div>
+          <div>
+            <div class="a-name">Miguel García</div>
+            <div class="a-role">Ing. Civil · U. Javeriana</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Barra de métricas -->
+    <div class="metrics-bar">
+      <div class="met-item">
+        <span class="met-num">+5.000</span>
+        <div class="met-desc">Estudiantes activos en Colombia</div>
+      </div>
+      <div class="met-item">
+        <span class="met-num">+300</span>
+        <div class="met-desc">Tutores certificados y verificados</div>
+      </div>
+      <div class="met-item">
+        <span class="met-num">98%</span>
+        <div class="met-desc">Tasa de satisfacción de sesiones</div>
+      </div>
+      <div class="met-item">
+        <span class="met-num">24/7</span>
+        <div class="met-desc">Disponibilidad sin excepción</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ═════════════════════════════════════════════════════════════════════════════════
+     SECCIÓN 7: CTA 2 - FORMULARIO DE REGISTRO (HubSpot Form)
+     
+     ESTRUCTURA:
+     1. HubSpot form embebido (principal)
+     2. Formulario manual fallback (si HubSpot no carga)
+     
+     OBJETIVO: Capturar lead con toda la información necesaria
+     ═════════════════════════════════════════════════════════════════════════════════ -->
+<section id="cta2">
+  <!-- Efecto visual de fondo -->
+  <div class="glow-blob"></div>
+
+  <div class="wrapper">
+    <div class="cta2-box">
+      <!-- Logo grande -->
+      <span class="cta2-owl">
+        <img src="assets/images/Buho.png" alt="Tuttor-Up" class="cta2-logo">
+      </span>
+
+      <!-- Encabezado -->
+      <span class="section-chip">Únete gratis</span>
+      <h2>Comienza tu viaje<br><span class="teal">educativo hoy.</span></h2>
+      <p>Regístrata y recibe tu primera sesión de tutoría completamente gratuita. 
+      Sin tarjeta de crédito requerida.</p>
+
+      <!-- ════════════════════════════════════════════════════════════════════════════
+          PASO 1: HubSpot Form (principal)
+          
+          TU FORMULARIO SE INYECTARÁ AQUI AUTOMÁTICAMENTE
+          Ver configuración en la sección <script> al final
+          ════════════════════════════════════════════════════════════════════════════ -->
+      <div id="hbspt-cta">
+        <!-- HubSpot inyectará el formulario aquí vía JavaScript -->
+      </div>
+
+      <!-- ════════════════════════════════════════════════════════════════════════════
+          PASO 2: Formulario manual (fallback)
+          
+          Si por algún motivo HubSpot no carga, este formulario será visible
+          Puede enviarse a la API de HubSpot automáticamente
+          ════════════════════════════════════════════════════════════════════════════ -->
+      <div class="hs-form-wrapper" id="manual-form">
+        <!-- Fila 1: Nombre y Apellido (2 columnas) -->
+        <div class="form-row-2">
+          <input type="text" class="fld" placeholder="Nombre" id="f-name">
+          <input type="text" class="fld" placeholder="Apellido" id="f-last">
+        </div>
+
+        <!-- Fila 2: Email (ancho completo) -->
+        <input type="email" class="fld" placeholder="Correo electrónico" id="f-email" style="width:100%">
+
+        <!-- Fila 3: Teléfono (ancho completo) -->
+        <input type="tel" class="fld" placeholder="Teléfono / WhatsApp" id="f-phone" style="width:100%">
+
+        <!-- Fila 4: Rol (Estudiante o Tutor) -->
+        <select class="fld fld-select" id="f-role" style="width:100%;color:var(--gray)">
+          <option value="" disabled selected>¿Eres estudiante o tutor?</option>
+          <option value="student">Estudiante — quiero aprender</option>
+          <option value="tutor">Tutor — quiero enseñar</option>
+        </select>
+
+        <!-- Fila 5: Materia de interés -->
+        <select class="fld fld-select" id="f-subject" style="width:100%;color:var(--gray)">
+          <option value="" disabled selected>¿Qué materia te interesa?</option>
+          <option>Matemáticas / Cálculo</option>
+          <option>Física</option>
+          <option>Química</option>
+          <option>Programación</option>
+          <option>Inglés</option>
+          <option>Otra materia</option>
+        </select>
+
+        <!-- Botón de envío -->
+        <button class="btn-teal" style="width:100%;justify-content:center;margin-top:4px;" onclick="submitHubSpot()">
+          Obtener sesión gratis
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+          </svg>
+        </button>
+
+        <!-- Texto de privacidad/confianza -->
+        <p class="privacy-txt">🔒 Tus datos están protegidos. No enviamos spam. Puedes cancelar cuando quieras.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ═════════════════════════════════════════════════════════════════════════════════
+     SECCIÓN 8: FAQ (Preguntas frecuentes)
+     
+     OBJETIVO:
+     - Resolver objeciones comunes
+     - Mejorar SEO
+     - Aumentar confianza antes de conversion
+     ═════════════════════════════════════════════════════════════════════════════════ -->
+<section id="faq">
+  <!-- Efecto visual de fondo -->
+  <div class="glow-blob"></div>
+
+  <div class="wrapper faq-layout">
+
+    <!-- PARTE IZQUIERDA: Introducción + CTA de soporte -->
+    <div class="faq-side">
+      <span class="section-chip">FAQ</span>
+      <h2>Preguntas<br><span class="teal">frecuentes.</span></h2>
+      <p>Resolvemos tus dudas antes de que las tengas. Si no encuentras lo que buscas, escríbenos directamente.</p>
+      <a href="#cta2" class="btn-teal" style="margin-top:1.5rem;">
+        Hablar con soporte
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+        </svg>
+      </a>
+    </div>
+
+    <!-- PARTE DERECHA: Lista de FAQs -->
+    <div class="faq-list">
+
+      <!-- PREGUNTA 1 -->
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          ¿Realmente la primera sesión es gratis?
+          <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-a">Sí, completamente gratis. Ningún dato de pago es requerido para comenzar. Una vez registrado 
+        puedes agendar tu primera sesión de hasta 60 minutos sin costo. Solo después decides si quieres continuar con un plan de pago.</div>
+      </div>
+
+      <!-- PREGUNTA 2 -->
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          ¿Cómo son seleccionados los tutores?
+          <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-a">Todos los tutores pasan por un proceso de 3 etapas: verificación de identidad y certificaciones 
+        académicas, prueba de conocimiento en su área y entrevista de evaluación pedagógica. Solo el 30% de los postulantes son aceptados.</div>
+      </div>
+
+      <!-- PREGUNTA 3 -->
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          ¿Qué pasa si no me gusta mi tutor?
+          <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-a">Sin problema. Puedes cambiar de tutor en cualquier momento sin costo adicional. Si la sesión fue 
+        insatisfactoria dentro de las primeras 24 horas, la reembolsamos completamente o la reemplazamos con otro tutor.</div>
+      </div>
+
+      <!-- PREGUNTA 4 -->
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          ¿Funciona para nivel universitario y bachillerato?
+          <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-a">Sí. Tuttor-Up tiene tutores especializados para todos los niveles: desde bachillerato y ICFES hasta 
+        pregrado, posgrado y certificaciones profesionales. Filtra por nivel al buscar tu tutor.</div>
+      </div>
+
+      <!-- PREGUNTA 5 -->
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          ¿Puedo ser tutor también?
+          <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-a">Claro. Si eres estudiante universitario o profesional con dominio en tu área, puedes aplicar como tutor. 
+        Tú defines tus horarios, tu tarifa y las materias que enseñas. Muchos tutores generan ingresos extra de forma flexible.</div>
+      </div>
+
+      <!-- PREGUNTA 6 -->
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          ¿Qué plataforma se usa para las clases?
+          <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-a">Las sesiones se realizan dentro de la propia plataforma de Tuttor-Up: videollamada, pizarrón 
+        digital colaborativo, chat en tiempo real y repositorio de materiales compartidos. No necesitas instalar nada adicional.</div>
+      </div>
+
+      <!-- PREGUNTA 7 -->
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          ¿Qué métodos de pago aceptan?
+          <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-a">Aceptamos tarjetas de crédito y débito (Visa, Mastercard, Amex), PSE, Nequi, Daviplata y transferencia 
+        bancaria. Todos los pagos están encriptados y son procesados de forma segura.</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ═════════════════════════════════════════════════════════════════════════════════
+     SECCIÓN 9: PRE-FOOTER (Última persuasión antes de footer)
+     
+     OBJETIVO: Refuerzo final de propuesta de valor + CTA final
+     ═════════════════════════════════════════════════════════════════════════════════ -->
+<section id="prefooter">
+  <!-- Efecto visual de fondo -->
+  <div class="glow-blob"></div>
+
+  <div class="wrapper pf-inner">
+    <!-- Logo decorativo -->
+    <span class="big-owl"></span>
+
+    <!-- Mensaje persuasivo final -->
+    <h2>¿Listo para aprender<br><span class="teal">en otro nivel?</span></h2>
+    <p>Únete a más de 5.000 estudiantes que ya están transformando sus notas y construyendo su futuro con Tuttor-Up.</p>
+
+    <!-- Botones de acción final -->
+    <div class="pf-btns">
+      <a href="#cta2" class="btn-teal">
+        Empezar ahora — Es gratis
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+        </svg>
+      </a>
+      <a href="#testimonios" class="btn-outline">Leer testimonios</a>
+    </div>
+
+    <!-- Row de validación y confianza -->
+    <div class="trust-row">
+      <span class="label">Confiado por</span>
+      <span class="trust-badge">🎓 U. Nacional</span>
+      <span class="trust-badge">🎓 Uniandes</span>
+      <span class="trust-badge">🎓 Javeriana</span>
+      <span class="trust-badge">🎓 Uniagustiniana</span>
+      <span class="trust-badge">🔒 Pago seguro</span>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═════════════════════════════════════════════════════════════════════════════════
+     SECCIÓN 10: FOOTER
+     
+     ESTRUCTURA:
+     - Brand + Social links (izquierda)
+     - Links de navegación (3 columnas centrales)
+     - Copyright + Badges (inferior)
+     ═════════════════════════════════════════════════════════════════════════════════ -->
+<footer>
+  <div class="wrapper">
+    <!-- Grid principal de 4 columnas -->
+    <div class="foot-grid">
+
+      <!-- COLUMNA 1: Marca + Descripción + Redes sociales -->
+      <div class="foot-brand">
+        <!-- Logo de marca -->
+        <a href="#" class="nav-logo">
+          <img src="assets/images/Buho.png" alt="Tuttor-Up" class="nav-logo-img">
+          TUTTOR<span>-UP</span>
+        </a>
+        <!-- Descripción corta -->
+        <p>La plataforma de tutorías 1 a 1 que conecta estudiantes con expertos verificados en toda Colombia. Aprende sin límites.</p>
+        <!-- Links de redes sociales con iconos SVG -->
+        <div class="foot-social">
+          <!-- LinkedIn -->
+          <a href="#" class="soc-btn" title="LinkedIn">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+          </a>
+          <!-- Instagram -->
+          <a href="#" class="soc-btn" title="Instagram">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.07 4.849-.149 3.227-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zM5.838 12a6.162 6.162 0 1 1 12.324 0 6.162 6.162 0 0 1-12.324 0zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm4.965-10.322a1.44 1.44 0 1 1 2.881.001 1.44 1.44 0 0 1-2.881-.001z"/></svg>
+          </a>
+          <!-- Twitter -->
+          <a href="#" class="soc-btn" title="Twitter">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2s9 5 20 5a9.5 9.5 0 00-9-5.5c4.75 2.3 7.308.857 9-2-2.275 1.348-4.934 2.276-7.5 2-5.386-1.18-8.248-7.51-7.5-13.5C2.013 3.022 5.612 0.822 9 1c3.314.987 6.695 3.637 7.843 7.646.359 1.274.628 2.282.6 2.645C21.817 10.47 23 7.82 23 5.5c0-.987-.07-1.936-.21-2.834A10.89 10.89 0 0123 3z"/></svg>
+          </a>
+          <!-- YouTube -->
+          <a href="#" class="soc-btn" title="YouTube">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          </a>
+          <!-- Discord -->
+          <a href="#" class="soc-btn" title="Discord">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.211.375-.445.864-.608 1.25a18.27 18.27 0 0 0-5.487 0c-.163-.386-.397-.875-.61-1.25a.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.873-1.295 1.226-1.994a.076.076 0 0 0-.042-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.294.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.294a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.359.698.77 1.364 1.225 1.994a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.057c.5-4.718-.838-8.812-3.549-12.454a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-.965-2.157-2.156 0-1.193.974-2.157 2.157-2.157 1.182 0 2.157.964 2.157 2.157 0 1.19-.974 2.156-2.157 2.156zm7.975 0c-1.183 0-2.157-.965-2.157-2.156 0-1.193.974-2.157 2.157-2.157 1.182 0 2.157.964 2.157 2.157 0 1.19-.975 2.156-2.157 2.156z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- COLUMNA 2: Links de Plataforma -->
+      <div class="foot-col">
+        <h4>Plataforma</h4>
+        <ul>
+          <li><a href="#">Cómo funciona</a></li>
+          <li><a href="#">Buscar tutores</a></li>
+          <li><a href="#">Ser tutor</a></li>
+          <li><a href="#">Materias</a></li>
+          <li><a href="#">Precios</a></li>
+        </ul>
+      </div>
+
+      <!-- COLUMNA 3: Links de Empresa -->
+      <div class="foot-col">
+        <h4>Empresa</h4>
+        <ul>
+          <li><a href="#">Sobre nosotros</a></li>
+          <li><a href="#">Blog educativo</a></li>
+          <li><a href="#">Carreras</a></li>
+          <li><a href="#">Prensa</a></li>
+          <li><a href="#">Contacto</a></li>
+        </ul>
+      </div>
+
+      <!-- COLUMNA 4: Links Legales -->
+      <div class="foot-col">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="#">Términos de uso</a></li>
+          <li><a href="#">Privacidad</a></li>
+          <li><a href="#">Cookies</a></li>
+          <li><a href="#">Habeas Data</a></li>
+          <li><a href="#">Centro de ayuda</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Línea inferior: Copyright + Badges -->
+    <div class="foot-bottom">
+      <!-- Copyright -->
+      <p>© 2025 Tuttor-Up SAS — Bogotá, Colombia. Todos los derechos reservados.</p>
+      <!-- Badgesy sello de seguridad -->
+      <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;">
+        <span class="hs-badge">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="#FF8A30"><circle cx="12" cy="12" r="10"/></svg>
+          Powered by HubSpot CRM
+        </span>
+        <span style="font-size:0.75rem;color:var(--gray);">🔒 SSL · Pagos cifrados · Ley 1581 de 2012</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+<!-- ═════════════════════════════════════════════════════════════════════════════════
+     SECCIÓN 11: SCRIPTS (Funcionalidades interactivas)
+     ═════════════════════════════════════════════════════════════════════════════════ -->
+<script>
+
+/* ═════════════════════════════════════════════════════════════════════════════════
+   FUNCIÓN 1: TOGGLE FAQ
+   
+   PROPÓSITO: Abrir/cerrar respuestas FAQ al hacer click en preguntas
+   ═════════════════════════════════════════════════════════════════════════════════ */
+function toggleFaq(el) {
+  // Obtener el contenedor FAQ más cercano
+  const item = el.closest('.faq-item');
+  // Verificar si ya está abierto
+  const isOpen = item.classList.contains('open');
+  // Cerrar todos los FAQs abiertos
+  document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+  // Abrir este FAQ siif no estaba abierto
+  if (!isOpen) item.classList.add('open');
+}
+
+/* ═════════════════════════════════════════════════════════════════════════════════
+   FUNCIÓN 2: INICIALIZAR FORMULARIO HUBSPOT
+   
+   PROPÓSITO: Cargar formulario HubSpot embebido en la página
+   IMPORTANTE: Reemplaza YOUR_PORTAL_ID y YOUR_FORM_ID con valores reales
+   ═════════════════════════════════════════════════════════════════════════════════ */
+window.onload = function() {
+  // Verificar si HubSpot está disponible
+  if (typeof hbspt !== 'undefined') {
+    // Crear el formulario
+    hbspt.forms.create({
+      region: "na1",                    // Tu región HubSpot (na1, eu1, etc.)
+      portalId: "YOUR_PORTAL_ID",       // ⚠️ REEMPLAZA CON TU PORTAL ID
+      formId: "YOUR_FORM_ID",           // ⚠️ REEMPLAZA CON TU FORM ID
+      target: "#hbspt-cta",             // Inyectar en este elemento
+      onFormReady: function() {
+        // Si HubSpot cargó, ocultar formulario manual
+        var manual = document.getElementById('manual-form');
+        if (manual) manual.style.display = 'none';
+      }
+    });
+  }
+};
+
+/* ═════════════════════════════════════════════════════════════════════════════════
+   FUNCIÓN 3: ENVIAR FORMULARIO MANUAL A HUBSPOT API
+   
+   PROPÓSITO: Si HubSpot form no carga, usar este formulario como fallback
+   Envía datos directamente a HubSpot API
+   ═════════════════════════════════════════════════════════════════════════════════ */
+function submitHubSpot() {
+  // ⚠️ REEMPLAZA ESTOS VALORES CON TUS CREDENCIALES REALES
+  const portalId = 'YOUR_PORTAL_ID';  
+  const formId   = 'YOUR_FORM_ID';    
+
+  // Construir payload con datos del formulario
+  const payload = {
+    fields: [
+      { name: 'firstname',  value: document.getElementById('f-name').value },
+      { name: 'lastname',   value: document.getElementById('f-last').value },
+      { name: 'email',      value: document.getElementById('f-email').value },
+      { name: 'phone',      value: document.getElementById('f-phone').value },
+      { name: 'jobtitle',   value: document.getElementById('f-role').value },
+      { name: 'subject__tuttorup', value: document.getElementById('f-subject').value }
+    ],
+    context: {
+      pageUri: window.location.href,  // URL actual de la página
+      pageName: document.title         // Título de la página
+    }
+  };
+
+  // Enviar a HubSpot API
+  fetch(`https://api.hsforms.com/submissions/v3/integration/submit/${portalId}/${formId}`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(payload)
+  })
+  .then(r => r.json())
+  .then(data => {
+    // SI ÉXITO: Mostrar mensaje de confirmación
+    document.getElementById('manual-form').innerHTML =
+      `<div style="text-align:center;padding:2rem 0;">
+        <div style="font-size:3rem;margin-bottom:1rem;">
+          <img src="assets/images/Buho.png" alt="" style="width:48px;height:48px;object-fit:contain;vertical-align:middle;margin-right:0.35rem;">✅
+        </div>
+        <h3 style="color:var(--teal);font-family:var(--font-disp);font-size:1.8rem;margin-bottom:0.5rem;">¡Listo! Ya eres parte de Tuttor-Up</h3>
+        <p style="color:var(--gray);max-width:400px;margin:0 auto;">Revisa tu correo — te enviaremos el link para tu primera sesión gratis en los próximos minutos.</p>
+      </div>`;
+  })
+  .catch(() => {
+    // SI ERROR: Mostrar alerta
+    alert('Ocurrió un error al enviar el formulario. Por favor intenta de nuevo.');
+  });
+}
+
+/* ═════════════════════════════════════════════════════════════════════════════════
+   FUNCIÓN 4: EFECTO DE HEADER EN SCROLL
+   
+   PROPÓSITO: Cambiar el color del borde del header cuando scrollea
+   Aumenta visibilidad visual cuando el usuario desplaza hacia abajo
+   ═════════════════════════════════════════════════════════════════════════════════ */
+window.addEventListener('scroll', function() {
+  const h = document.querySelector('header');
+  // Si desplazamiento > 60px: color más brillante
+  if (window.scrollY > 60) {
+    h.style.borderBottomColor = 'rgba(0,212,184,0.25)';
+  } else {
+    // Si no: color más tenue
+    h.style.borderBottomColor = 'rgba(0,212,184,0.12)';
+  }
+});
+
+/* ═════════════════════════════════════════════════════════════════════════════════
+   FUNCIÓN 5: SMOOTH SCROLL PARA LINKS INTERNOS
+   
+   PROPÓSITO: Animar el movimiento hacia cualquier sección de la página
+   Mejora la experiencia de navegación
+   ═════════════════════════════════════════════════════════════════════════════════ */
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    e.preventDefault();  // Prevenir salto abrupt
+    const target = document.querySelector(a.getAttribute('href'));
+    if (target) {
+      // Desplazamiento suave (smooth) hacia el target
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
+});
+
+</script>
+
+</body>
+</html>

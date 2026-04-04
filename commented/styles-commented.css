@@ -1,0 +1,1596 @@
+/* ═════════════════════════════════════════════════════════════════════════════════
+   TUTTOR-UP STYLESHEET
+   
+   Plataforma de Tutorías 1 a 1 en Colombia
+   
+   ESTRUCTURA:
+   1. Variables globales (colores, fuentes, espaciado)
+   2. Estilos base y reset
+   3. Componentes reutilizables (botones, tarjetas)
+   4. Secciones (header, hero, benefit cards, footer)
+   5. Animaciones (keyframes)
+   6. Responsive design (media queries)
+   
+   ═════════════════════════════════════════════════════════════════════════════════ */
+
+/* ═════════════════════════════════════════════════════════════════════════════════
+   PARTE 1: VARIABLES GLOBALES (CSS CUSTOM PROPERTIES)
+   
+   Sistema de diseño centralizado para mantener consistencia
+   Facilita cambios globales sin editar cada propiedad
+   ═════════════════════════════════════════════════════════════════════════════════ */
+
+:root {
+  /* ────────────────────────────────────────────────────────────────────────────
+     PALETA DE COLORES
+     ──────────────────────────────────────────────────────────────────────────── */
+  --teal:       #00d4b8;      /* Color primario — botones, accents, highlights */
+  --orange:     #F5A623;      /* Color secundario — alertas, llamadas especiales */
+  --bg-main:    #1a1a2e;      /* Fondo principal oscuro */
+  --bg-light:   #0f3460;      /* Fondo secundario más claro */
+  --bg-card:    rgba(256,256,256,0.07);  /* Fondo semi-transparente para glass cards */
+  --white:      #ffffff;      /* Blanco puro para texto y elementos */
+  --gray:       #a1a1a1;      /* Gris para textos secundarios */
+  --gray-dark:  #666666;      /* Gris oscuro interno */
+  --blue:       #516EF9;      /* Azul — avatar tutor */
+
+  /* ────────────────────────────────────────────────────────────────────────────
+     TIPOGRAFÍA
+     ──────────────────────────────────────────────────────────────────────────── */
+  --font-disp:  'Barlow Condensed', sans-serif;    /* Títulos y display */
+  --font-body:  'Space Grotesk', sans-serif;       /* Body copy */
+
+  /* ────────────────────────────────────────────────────────────────────────────
+     ESPACIADO Y LAYOUT
+     ──────────────────────────────────────────────────────────────────────────── */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 3rem;
+
+  /* Ancho máximo del contenedor principal */
+  --max-width:  1200px;
+}
+
+/* ═════════════════════════════════════════════════════════════════════════════════
+   PARTE 2: RESET Y ESTILOS BASE
+   ═════════════════════════════════════════════════════════════════════════════════ */
+
+/* Reset global — eliminar márgenes y padding por defecto */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Elemento raíz */
+html {
+  scroll-behavior: smooth;  /* Scroll suave nativo para links internos */
+}
+
+/* Cuerpo de la página */
+body {
+  font-family: var(--font-body);      /* Fuente por defecto */
+  background-color: var(--bg-main);   /* Fondo oscuro */
+  color: var(--white);                /* Texto blanco */
+  line-height: 1.6;                   /* Espaciado de línea */
+  overflow-x: hidden;                 /* Evitar scroll horizontal */
+}
+
+/* Imágenes receptivas */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Enlaces por defecto */
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+/* Contenedor reutilizable (wrapper) — limita ancho y centra */
+.wrapper {
+  max-width: var(--max-width);
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 var(--spacing-lg);
+}
+
+/* ═════════════════════════════════════════════════════════════════════════════════
+   PARTE 3: COMPONENTES REUTILIZABLES
+   ═════════════════════════════════════════════════════════════════════════════════ */
+
+/* ────────────────────────────────────────────────────────────────────────────
+   BOTONES
+   ──────────────────────────────────────────────────────────────────────────── */
+
+/* Botón primario — fondo teal, ideal para CTAs principales */
+.btn-teal {
+  display: inline-flex;                     /* Alinea contenido en fila */
+  align-items: center;                      /* Centra verticalmente */
+  gap: var(--spacing-sm);                   /* Espacio entre ícono y texto */
+  padding: 0.75rem 1.75rem;                 /* Espaciado interno */
+  background-color: var(--teal);            /* Color de fondo */
+  color: var(--bg-main);                    /* Texto oscuro sobre fondo teal */
+  font-weight: 700;                         /* Fuente audaz */
+  border-radius: 12px;                      /* Esquinas redondeadas */
+  border: none;                             /* Sin borde */
+  cursor: pointer;                          /* Cursor de mano */
+  font-family: var(--font-body);            /* Fuente consistente */
+  transition: all 0.3s ease;                /* Transición suave en hover */
+  font-size: 0.95rem;                       /* Tamaño de fuente */
+}
+
+/* Efecto hover — mayor escala y sombra */
+.btn-teal:hover {
+  transform: translateY(-2px);              /* Elevación visual */
+  box-shadow: 0 8px 24px rgba(0,212,184,0.3);  /* Sombra teal */
+}
+
+/* Botón secundario — fondo transparente con borde */
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  padding: 0.75rem 1.75rem;
+  background-color: transparent;            /* Sin fondo */
+  color: var(--teal);                       /* Texto teal */
+  font-weight: 700;
+  border: 2px solid var(--teal);            /* Borde visible */
+  border-radius: 12px;
+  cursor: pointer;
+  font-family: var(--font-body);
+  transition: all 0.3s ease;
+  font-size: 0.95rem;
+}
+
+/* Efecto hover — relleno y transformación */
+.btn-outline:hover {
+  background-color: var(--teal);
+  color: var(--bg-main);
+  transform: translateY(-2px);
+}
+
+/* ────────────────────────────────────────────────────────────────────────────
+   BADGES Y CHIPS
+   ──────────────────────────────────────────────────────────────────────────── */
+
+/* Chip de sección — indicador de tema */
+.section-chip {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background-color: rgba(0,212,184,0.12);   /* Fondo teal muy suave */
+  color: var(--teal);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;                   /* Espaciado entre letras */
+  text-transform: uppercase;                /* Mayúsculas */
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+/* Chip de eyebrow en hero — indicador con dot */
+.hero-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--teal);
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+/* Dot indicator del eyebrow */
+.dot {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  background-color: var(--teal);
+  border-radius: 50%;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+/* ────────────────────────────────────────────────────────────────────────────
+   GLASS CARDS — Efecto glassmorphism
+   
+   Tarjetas semi-transparentes con fondo y borde de vidrio esmerilado
+   ──────────────────────────────────────────────────────────────────────────── */
+
+.glass-card {
+  background-color: rgba(30,30,46,0.7);      /* Fondo muy oscuro semi-transparente */
+  backdrop-filter: blur(10px);                /* Efecto de difuminado de vidrio */
+  border: 1px solid rgba(255,255,255,0.1);   /* Borde sutil blanco */
+  border-radius: 20px;                        /* Esquinas redondeadas */
+  padding: 2rem;                              /* Espaciado interno */
+  transition: all 0.3s ease;                  /* Transición suave */
+}
+
+/* Efecto hover — levanta con sombra y resalta borde */
+.glass-card:hover {
+  transform: translateY(-8px);                /* Sube 8px */
+  border-color: rgba(0,212,184,0.3);         /* Borde teal visible */
+  box-shadow: 
+    inset 0 24px 32px rgba(0,212,184,0.1),   /* Sombra interna teal */
+    0 8px 32px rgba(0,212,184,0.15);         /* Sombra externa teal */
+  background-color: rgba(30,30,46,0.9);      /* Fondo más opaco */
+}
+
+/* ────────────────────────────────────────────────────────────────────────────
+   TARJETA DE BENEFICIO
+   ──────────────────────────────────────────────────────────────────────────── */
+
+.ben-card {
+  position: relative;
+}
+
+/* Ícono en tarjeta de beneficio */
+.ben-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;                                /* Tamaño contenedor */
+  height: 48px;
+  background-color: rgba(0,212,184,0.1);     /* Fondo suave */
+  border-radius: 12px;
+  margin-bottom: 1rem;
+  transition: all 0.3s ease;
+}
+
+/* SVG dentro del ícono */
+.ben-icon svg {
+  width: 32px;                                /* Tamaño del SVG */
+  height: 32px;
+  stroke-width: 2;                            /* Grosor de líneas */
+  color: inherit;
+}
+
+/* Ícono con color teal */
+.ben-icon.teal {
+  color: var(--teal);
+}
+
+/* Ícono con color naranja */
+.ben-icon.orange {
+  color: var(--orange);
+  background-color: rgba(245,166,35,0.1);
+}
+
+/* Efecto hover en ícono */
+.ben-card:hover .ben-icon {
+  transform: scale(1.15);                     /* Agranda al 115% */
+  box-shadow: 0 0 40px rgba(0,212,184,0.4);   /* Brillo teal */
+}
+
+/* Título de tarjeta */
+.ben-card h3 {
+  font-family: var(--font-disp);
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  line-height: 1.3;
+}
+
+/* Descripción en tarjeta */
+.ben-card p {
+  color: var(--gray);
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+
+/* Etiqueta/pill en tarjeta */
+.feature-pill {
+  display: inline-block;
+  padding: 0.4rem 0.8rem;
+  background-color: rgba(0,212,184,0.15);
+  color: var(--teal);
+  font-size: 0.75rem;
+  font-weight: 600;
+  border-radius: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* ═════════════════════════════════════════════════════════════════════════════════
+   PARTE 4: SECCIÓN HEADER (NAVEGACIÓN PRIMARIA)
+   ═════════════════════════════════════════════════════════════════════════════════ */
+
+header {
+  position: fixed;                            /* Se queda arriba al scroll */
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;                              /* Siempre encima */
+  background-color: rgba(26,26,46,0.95);    /* Fondo semi-transparente */
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(0,212,184,0.12);
+  transition: all 0.3s ease;
+}
+
+/* Navegación dentro del header */
+header nav {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  gap: 2rem;
+}
+
+/* Logo — marca + texto */
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-disp);
+  font-size: 1.2rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  white-space: nowrap;
+  transition: transform 0.3s ease;
+}
+
+/* Span del logo con color teal */
+.nav-logo span {
+  color: var(--teal);
+}
+
+/* Imagen del logo */
+.nav-logo-img {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+}
+
+/* Efectos hover */
+.nav-logo:hover {
+  transform: scale(1.05);
+}
+
+/* Links de navegación */
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+  flex: 1;
+}
+
+.nav-links a {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--white);
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: var(--teal);
+}
+
+/* Acciones de navegación (botones) */
+.nav-actions {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  white-space: nowrap;
+}
+
+/* ═════════════════════════════════════════════════════════════════════════════════
+   PARTE 5: SECCIÓN HERO (Encabezado principal)
+   ═════════════════════════════════════════════════════════════════════════════════ */
+
+#hero {
+  position: relative;
+  padding: 8rem 0 4rem;                       /* Espaciado vertical */
+  margin-top: 4rem;                           /* Espacio para header fijo */
+  overflow: hidden;
+}
+
+/* Grid de 2 columnas en hero */
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;             /* Dos columnas iguales */
+  gap: 4rem;
+  align-items: center;
+}
+
+/* Titulo principal del hero */
+.hero-title {
+  font-family: var(--font-disp);
+  font-size: 3.5rem;
+  font-weight: 900;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  margin-bottom: 1.5rem;
+}
+
+/* Styling para palabras destacadas */
+.teal-line {
+  color: var(--teal);
+  position: relative;
+  display: inline-block;
+}
+
+/* Descripción hero */
+.hero-desc {
+  font-size: 1.1rem;
+  color: var(--gray);
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  max-width: 500px;
+}
+
+/* Contenedor de botones hero */
+.hero-btns {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+}
+
+/* Stats en hero */
+.hero-stats {
+  display: flex;
+  gap: 3rem;
+}
+
+/* Cada stat individual */
+.stat {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.stat .num {
+  font-family: var(--font-disp);
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--teal);
+}
+
+.stat .lbl {
+  font-size: 0.8rem;
+  color: var(--gray);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* ────────────────────────────────────────────────────────────────────────────
+   ELEMENTO VISUAL: BÚHO ANIMADO
+   ──────────────────────────────────────────────────────────────────────────── */
+
+.hero-visual {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 400px;
+}
+
+/* Contenedor central del búho */
+.owl-center {
+  position: absolute;
+  width: 155px;
+  height: 155px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Cuerpo del búho (círculo) */
+.owl-body {
+  width: 155px;
+  height: 155px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #0f3460 0%, #1a1a2e 100%);
+  border: 3px solid var(--teal);
+  box-shadow: inset 0 10px 30px rgba(0,0,0,0.3);
+  animation: owl-float 4s ease-in-out infinite;  /* Animación de flotación */
+}
+
+/* Anillos de brillo alrededor del búho */
+.owl-glow-ring {
+  position: absolute;
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  border: 2px solid rgba(0,212,184,0.8);
+  animation: ring-expand 3s ease-out infinite;  /* Animación de expansión */
+}
+
+/* Primer anillo — sin delay */
+.owl-glow-ring:nth-child(1) {
+  animation-delay: 0s;
+}
+
+/* Segundo anillo — delay 0.8s */
+.owl-glow-ring:nth-child(2) {
+  animation-delay: 0.8s;
+}
+
+/* Tercer anillo — delay 1.6s */
+.owl-glow-ring:nth-child(3) {
+  animation-delay: 1.6s;
+}
+
+/* ────────────────────────────────────────────────────────────────────────────
+   TARJETAS FLOTANTES (Floating Cards)
+   ──────────────────────────────────────────────────────────────────────────── */
+
+.fc {
+  position: absolute;
+  padding: 1rem 1.25rem;
+  background: rgba(30,30,46,0.8);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(0,212,184,0.2);
+  border-radius: 12px;
+  font-size: 0.85rem;
+  white-space: nowrap;
+}
+
+.fc h4 {
+  font-family: var(--font-disp);
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+
+.fc p {
+  color: var(--gray);
+  font-size: 0.75rem;
+}
+
+/* Posiciones de tarjetas flotantes */
+.fc:nth-child(5) { top: 20px; left: -40px; animation: fc-float 5s ease-in-out infinite; }
+.fc:nth-child(6) { top: 40px; right: -40px; animation: fc-float 5.5s ease-in-out infinite; display: none; /* Oculta */ }
+.fc:nth-child(7) { bottom: 60px; left: 20px; animation: fc-float 6s ease-in-out infinite; display: none; /* Oculta */ }
+.fc:nth-child(8) { bottom: 20px; right: 20px; animation: fc-float 5.2s ease-in-out infinite; }
+
+/* Efecto de fondo plano en hero */
+.glow-blob {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(0,212,184,0.3) 0%, transparent 70%);
+  top: 50%;
+  right: -100px;
+  transform: translateY(-50%);
+  filter: blur(40px);
+  z-index: -1;
+}
+
+/* Logo de fondo grande */
+.hero-bg-logo {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  right: -100px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: url('assets/images/Buho.png') center/contain no-repeat;
+  opacity: 0.05;
+  z-index: -1;
+}
+
+/* ═════════════════════════════════════════════════════════════════════════════════
+   PARTE 6: SECCIÓN BENEFICIOS
+   ═════════════════════════════════════════════════════════════════════════════════ */
+
+#beneficios {
+  position: relative;
+  padding: 6rem 0;
+  background-color: var(--bg-main);
+}
+
+/* Encabezado de sección */
+.ben-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.ben-header h2 {
+  font-family: var(--font-disp);
+  font-size: 2.8rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.ben-header p {
+  font-size: 1rem;
+  color: var(--gray);
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Grid de tarjetas de beneficio — 3 columnas */
+.ben-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+/* ═════════════════════════════════════════════════════════════════════════════════
+   PARTE 7: SECCIÓN CTA 1 (Call To Action intermedio)
+   ═════════════════════════════════════════════════════════════════════════════════ */
+
+#cta1 {
+  position: relative;
+  padding: 4rem 0;
+}
+
+.cta1-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3rem;
+}
+
+.cta1-text h2 {
+  font-family: var(--font-disp);
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.cta1-text p {
+  color: var(--gray);
+  font-size: 1rem;
+  margin-bottom: 2rem;
+  max-width: 500px;
+  line-height: 1.6;
+}
+
+/* Chip de urgencia */
+.urgency-chip {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background-color: rgba(245,166,35,0.15);
+  color: var(--orange);
+  font-weight: 700;
+  font-size: 0.85rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.cta1-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* ═════════════════════════════════════════════════════════════════════════════════
+   PARTE 8: SECCIÓN PRODUCTO (How It Works)
+   ═════════════════════════════════════════════════════════════════════════════════ */
+
+#producto {
+  position: relative;
+  padding: 6rem 0;
+}
+
+.prod-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+#producto h2 {
+  font-family: var(--font-disp);
+  font-size: 2.8rem;
+  font-weight: 800;
+  margin-bottom: 2rem;
+  line-height: 1.2;
+}
+
+/* Contenedor de pasos */
+.prod-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* Cada paso */
+.step {
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
+}
+
+.step-num {
+  font-family: var(--font-disp);
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: var(--teal);
+  flex-shrink: 0;
+  width: 60px;
+}
+
+.step h3 {
+  font-family: var(--font-disp);
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.step p {
+  color: var(--gray);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* ────────────────────────────────────────────────────────────────────────────
+   MOCK-UP DE DASHBOARD
+   ──────────────────────────────────────────────────────────────────────────── */
+
+.app-mockup {
+  background: linear-gradient(135deg, #0f3460 0%, #1a1a2e 100%);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+  border: 1px solid rgba(0,212,184,0.15);
+}
+
+.mock-topbar {
+  background-color: #0f3460;
+  padding: 0.75rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  border-bottom: 1px solid rgba(0,212,184,0.1);
+}
+
+.mock-dots {
+  display: flex;
+  gap: 0.4rem;
+}
+
+.mock-dots span {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.mock-body {
+  padding: 1.5rem;
+  color: var(--gray);
+  font-size: 0.85rem;
+}
+
+.mock-search {
+  background: rgba(30,30,46,0.5);
+  padding: 0.75rem;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  border: 1px solid rgba(0,212,184,0.1);
+}
+
+.mock-subjects {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.mock-subject {
+  background: rgba(30,30,46,0.8);
+  padding: 0.75rem;
+  border-radius: 8px;
+  border: 1px solid rgba(0,212,184,0.1);
+}
+
+.subj-name {
+  font-weight: 700;
+  color: var(--teal);
+  font-size: 0.75rem;
+  margin-bottom: 0.25rem;
+}
+
+.subj-count {
+  font-size: 0.7rem;
+  color: var(--gray);
+}
+
+.mock-tutor {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: rgba(30,30,46,0.8);
+  padding: 0.75rem;
+  border-radius: 8px;
+  border: 1px solid rgba(0,212,184,0.1);
+}
+
+.mock-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--teal), #00d4b8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.mock-tutor-info {
+  flex: 1;
+}
+
+.t-name {
+  font-weight: 700;
+  color: var(--white);
+  font-size: 0.8rem;
+}
+
+.t-sub {
+  font-size: 0.7rem;
+  color: var(--gray);
+}
+
+.live-badge {
+  background-color: rgba(245,166,35,0.2);
+  color: var(--orange);
+  font-size: 0.65rem;
+  font-weight: 700;
+  padding: 0.3rem 0.5rem;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+
+/* ═════════════════════════════════════════════════════════════════════════════════
+   PARTE 9: SECCIÓN TESTIMONIOS
+   ═════════════════════════════════════════════════════════════════════════════════ */
+
+#testimonios {
+  position: relative;
+  padding: 6rem 0;
+}
+
+.test-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.test-header h2 {
+  font-family: var(--font-disp);
+  font-size: 2.8rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.test-header p {
+  color: var(--gray);
+  font-size: 1rem;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Grid de testimonios */
+.test-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+/* Tarjeta de testimonio */
+.test-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.stars {
+  color: var(--orange);
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+  letter-spacing: 0.1em;
+}
+
+.test-quote {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  flex: 1;
+  color: var(--white);
+}
+
+.test-author {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.ava {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: var(--white);
+}
+
+.ava.teal {
+  background: linear-gradient(135deg, var(--teal), #0f3460);
+}
+
+.ava.orange {
+  background: linear-gradient(135deg, var(--orange), #0f3460);
+}
+
+.ava.blue {
+  background: linear-gradient(135deg, var(--blue), #0f3460);
+}
+
+.a-name {
+  font-family: var(--font-disp);
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.a-role {
+  font-size: 0.8rem;
+  color: var(--gray);
+}
+
+/* Barra de métricas */
+.metrics-bar {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  padding: 2rem;
+  background: rgba(30,30,46,0.7);
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(0,212,184,0.1);
+}
+
+.met-item {
+  text-align: center;
+}
+
+.met-num {
+  display: block;
+  font-family: var(--font-disp);
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--teal);
+  margin-bottom: 0.5rem;
+}
+
+.met-desc {
+  font-size: 0.85rem;
+  color: var(--gray);
+  line-height: 1.4;
+}
+
+/* ═════════════════════════════════════════════════════════════════════════════════
+   PARTE 10: SECCIÓN CTA 2 (FORMULARIO)
+   ═════════════════════════════════════════════════════════════════════════════════ */
+
+#cta2 {
+  position: relative;
+  padding: 4rem 0;
+}
+
+.cta2-box {
+  max-width: 500px;
+  margin: 0 auto;
+  text-align: center;
+  background: rgba(30,30,46,0.7);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(0,212,184,0.15);
+  border-radius: 24px;
+  padding: 3rem 2rem;
+}
+
+.cta2-owl {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, var(--teal), #0f3460);
+  border-radius: 50%;
+  margin: 0 auto 2rem;
+}
+
+.cta2-logo {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 8px rgba(0,212,184,0.3));
+}
+
+.cta2-box h2 {
+  font-family: var(--font-disp);
+  font-size: 2.2rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.cta2-box p {
+  color: var(--gray);
+  font-size: 0.95rem;
+  margin-bottom: 2rem;
+  line-height: 1.5;
+}
+
+/* ────────────────────────────────────────────────────────────────────────────
+   FORMULARIO
+   ──────────────────────────────────────────────────────────────────────────── */
+
+.hs-form-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.fld {
+  padding: 0.75rem 1rem;
+  background-color: rgba(30,30,46,0.8);
+  border: 1px solid rgba(0,212,184,0.2);
+  border-radius: 10px;
+  color: var(--white);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+}
+
+.fld::placeholder {
+  color: var(--gray-dark);
+}
+
+.fld:focus {
+  outline: none;
+  border-color: var(--teal);
+  box-shadow: 0 0 12px rgba(0,212,184,0.2);
+  background-color: rgba(30,30,46,0.95);
+}
+
+.fld-select {
+  cursor: pointer;
+}
+
+.form-row-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+}
+
+.privacy-txt {
+  font-size: 0.75rem;
+  color: var(--gray);
+  text-align: center;
+  margin-top: 0.5rem;
+  line-height: 1.5;
+}
+
+/* ═════════════════════════════════════════════════════════════════════════════════
+   PARTE 11: SECCIÓN FAQ (Preguntas Frecuentes)
+   ═════════════════════════════════════════════════════════════════════════════════ */
+
+#faq {
+  position: relative;
+  padding: 6rem 0;
+}
+
+.faq-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+.faq-side h2 {
+  font-family: var(--font-disp);
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.faq-side p {
+  color: var(--gray);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.faq-item {
+  background: rgba(30,30,46,0.7);
+  border: 1px solid rgba(0,212,184,0.1);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+/* Efecto hover */
+.faq-item:hover {
+  border-color: rgba(0,212,184,0.3);
+  background: rgba(30,30,46,0.9);
+}
+
+.faq-q {
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.95rem;
+  user-select: none;
+  transition: color 0.3s ease;
+}
+
+.faq-q:hover {
+  color: var(--teal);
+}
+
+.faq-toggle {
+  font-size: 1.5rem;
+  transition: transform 0.3s ease;
+  flex-shrink: 0;
+}
+
+.faq-a {
+  max-height: 0;
+  overflow: hidden;
+  padding: 0 1.5rem;
+  color: var(--gray);
+  font-size: 0.9rem;
+  line-height: 1.6;
+  transition: all 0.3s ease;
+}
+
+/* Estado abierto del FAQ */
+.faq-item.open .faq-a {
+  max-height: 500px;
+  padding: 0 1.5rem 1.25rem 1.5rem;
+}
+
+.faq-item.open .faq-toggle {
+  transform: rotate(45deg);
+  color: var(--teal);
+}
+
+/* ═════════════════════════════════════════════════════════════════════════════════
+   PARTE 12: PRE-FOOTER
+   ═════════════════════════════════════════════════════════════════════════════════ */
+
+#prefooter {
+  position: relative;
+  padding: 4rem 0;
+  text-align: center;
+}
+
+.pf-inner {
+  position: relative;
+}
+
+.big-owl {
+  display: block;
+  width: 120px;
+  height: 120px;
+  background: url('assets/images/Buho.png') center/contain no-repeat;
+  margin: 0 auto 2rem;
+  opacity: 0.4;
+}
+
+#prefooter h2 {
+  font-family: var(--font-disp);
+  font-size: 2.8rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+#prefooter p {
+  color: var(--gray);
+  font-size: 1rem;
+  margin-bottom: 2rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+}
+
+.pf-btns {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+.trust-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+.label {
+  font-size: 0.85rem;
+  color: var(--gray);
+  font-weight: 600;
+}
+
+.trust-badge {
+  padding: 0.4rem 0.8rem;
+  background: rgba(0,212,184,0.1);
+  border: 1px solid rgba(0,212,184,0.2);
+  border-radius: 6px;
+  font-size: 0.8rem;
+  color: var(--teal);
+  white-space: nowrap;
+}
+
+/* ═════════════════════════════════════════════════════════════════════════════════
+   PARTE 13: FOOTER
+   ═════════════════════════════════════════════════════════════════════════════════ */
+
+footer {
+  background-color: #0f3460;
+  border-top: 1px solid rgba(0,212,184,0.1);
+  padding: 3rem 0 1rem;
+}
+
+.foot-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 3rem;
+  margin-bottom: 2rem;
+}
+
+/* Columna de marca */
+.foot-brand p {
+  color: var(--gray);
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+/* Links de redes sociales */
+.foot-social {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.soc-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: rgba(0,212,184,0.1);
+  border: 1px solid rgba(0,212,184,0.2);
+  color: var(--teal);
+  transition: all 0.3s ease;
+}
+
+.soc-btn svg {
+  width: 20px;
+  height: 20px;
+}
+
+.soc-btn:hover {
+  background-color: var(--teal);
+  color: var(--bg-main);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 16px rgba(0,212,184,0.3);
+}
+
+/* Columnas de links del footer */
+.foot-col h4 {
+  font-family: var(--font-disp);
+  font-size: 0.95rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--white);
+}
+
+.foot-col ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.foot-col a {
+  color: var(--gray);
+  font-size: 0.9rem;
+  transition: color 0.3s ease;
+}
+
+.foot-col a:hover {
+  color: var(--teal);
+}
+
+/* Fila inferior del footer */
+.foot-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(0,212,184,0.1);
+  font-size: 0.85rem;
+  color: var(--gray);
+}
+
+.hs-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 0.8rem;
+  background: rgba(255,138,48,0.1);
+  border: 1px solid rgba(255,138,48,0.2);
+  border-radius: 6px;
+  color: var(--orange);
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+/* ═════════════════════════════════════════════════════════════════════════════════
+   PARTE 14: ANIMACIONES KEYFRAME
+   
+   Estas animaciones están definidas aquí para reutilización eficiente
+   ═════════════════════════════════════════════════════════════════════════════════ */
+
+/* ────────────────────────────────────────────────────────────────────────────
+   ANIMACIÓN: OWL-FLOAT
+   
+   Propósito: Hacer que el búho suba y baje de forma suave y continua
+   Duración: 4 segundos
+   Ciclo: Infinito
+   
+   Timeline:
+   - 0% (inicio): Posición normal (translateY 0)
+   - 50% (mitad): Sube 16px
+   - 100% (final): Vuelve a posición normal
+   ──────────────────────────────────────────────────────────────────────────── */
+@keyframes owl-float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-16px);
+  }
+}
+
+/* ────────────────────────────────────────────────────────────────────────────
+   ANIMACIÓN: RING-EXPAND
+   
+   Propósito: Anillos que se expanden y desaparecen alrededor del búho
+   Duración: 3 segundos
+   Ciclo: Infinito
+   
+   Timeline:
+   - 0% (inicio): Escala 90%, opacidad al 80%
+   - 100% (final): Escala 110%, opacidad al 0% (desaparece)
+   
+   Efecto combinado: Ondas de expansión continua
+   ──────────────────────────────────────────────────────────────────────────── */
+@keyframes ring-expand {
+  0% {
+    opacity: 0.8;
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.1);
+  }
+}
+
+/* ────────────────────────────────────────────────────────────────────────────
+   ANIMACIÓN: FC-FLOAT
+   
+   Propósito: Hacer que las tarjetas flotantes suban y bajen
+   Similar a owl-float pero con variaciones de duración (5-6 segundos)
+   Permite que cada tarjeta tenga su propio ritmo
+   
+   Duración: 5-6 segundos (según tarjeta)
+   ──────────────────────────────────────────────────────────────────────────── */
+@keyframes fc-float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* ────────────────────────────────────────────────────────────────────────────
+   ANIMACIÓN: PULSE (para dot indicator)
+   
+   Propósito: Hace que el punto del eyebrow pulse sutilmente
+   ──────────────────────────────────────────────────────────────────────────── */
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+}
+
+/* ═════════════════════════════════════════════════════════════════════════════════
+   PARTE 15: RESPONSIVE DESIGN (Media Queries)
+   
+   Breakpoints:
+   - 1024px: Tablets (iPad)
+   - 768px: Móviles grandes
+   - <768px: Móviles pequeños
+   ═════════════════════════════════════════════════════════════════════════════════ */
+
+/* ────────────────────────────────────────────────────────────────────────────
+   BREAKPOINT: 1024px (Tablets)
+   ──────────────────────────────────────────────────────────────────────────── */
+@media (max-width: 1024px) {
+  
+  /* Hero: 2 columnas → 1 columna */
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  /* Beneficios: 3 columnas → 2 columnas */
+  .ben-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  /* Producto: 2 columnas → 1 columna */
+  .prod-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  /* Testimonios: 3 columnas → 2 columnas */
+  .test-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  /* Métricas: 4 columnas → 2 columnas */
+  .metrics-bar {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  /* Footer: 4 columnas → 2 columnas */
+  .foot-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  /* Tipografía más pequeña */
+  .hero-title {
+    font-size: 2.8rem;
+  }
+  
+  .ben-header h2,
+  #producto h2,
+  .test-header h2,
+  #prefooter h2 {
+    font-size: 2.2rem;
+  }
+}
+
+/* ────────────────────────────────────────────────────────────────────────────
+   BREAKPOINT: 768px (Móviles)
+   ──────────────────────────────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  
+  /* Padding general más pequeño */
+  .wrapper {
+    padding: 0 1rem;
+  }
+  
+  /* Header: hide nav links, keep logo + buttons */
+  header nav {
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 1rem;
+  }
+  
+  .nav-links {
+    display: none;  /* Ocultar links en móvil */
+  }
+  
+  /* Hero: padding y margenes */
+  #hero {
+    padding: 6rem 0 2rem;
+    margin-top: 3rem;
+  }
+  
+  .hero-title {
+    font-size: 2rem;
+  }
+  
+  .hero-stats {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  /* Beneficios: 1 columna */
+  .ben-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .ben-header h2 {
+    font-size: 1.8rem;
+  }
+  
+  /* Producto: ajustes */
+  #producto {
+    padding: 3rem 0;
+  }
+  
+  /* FAQ: layout lineal */
+  .faq-layout {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  /* Testimonios: 1 columna */
+  .test-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  /* Métricas: 1 columna */
+  .metrics-bar {
+    grid-template-columns: 1fr;
+  }
+  
+  /* CTA: botones apilados */
+  .hero-btns,
+  .cta1-actions,
+  .pf-btns {
+    flex-direction: column;
+  }
+  
+  .btn-teal,
+  .btn-outline {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  /* Footer: 1 columna */
+  .foot-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .foot-bottom {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  /* Reducir tamaños de fuente */
+  h2 {
+    font-size: 1.8rem;
+  }
+  
+  h3 {
+    font-size: 1rem;
+  }
+}
