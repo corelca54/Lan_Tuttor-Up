@@ -579,21 +579,21 @@ nav { max-width: 1180px; margin: 0 auto; padding: 0 28px; height: 70px; display:
 .privacy-txt { font-size: 0.73rem; color: var(--gray); text-align: center; margin-top: 8px; }
 
 /* HubSpot custom overrides */
-#hbspt-cta,
-#hbspt-cta * {
+.hs-form-frame,
+.hs-form-frame * {
   box-sizing: border-box;
 }
-#hbspt-cta .hs-form-field label,
-#hbspt-cta label,
-#hbspt-cta .hs-form-field legend,
-#hbspt-cta .hs-form-field span,
-#hbspt-cta .hs-form-field p,
-#hbspt-cta .hs-form-field .hs-field-desc,
-#hbspt-cta .hs-form-field label span,
-#hbspt-cta .hs-form-field label strong,
-#hbspt-cta .hs-form-field label em,
-#hbspt-cta .hs-label,
-#hbspt-cta .hs-fieldtype-text label {
+.hs-form-frame .hs-form-field label,
+.hs-form-frame label,
+.hs-form-frame .hs-form-field legend,
+.hs-form-frame .hs-form-field span,
+.hs-form-frame .hs-form-field p,
+.hs-form-frame .hs-form-field .hs-field-desc,
+.hs-form-frame .hs-form-field label span,
+.hs-form-frame .hs-form-field label strong,
+.hs-form-frame .hs-form-field label em,
+.hs-form-frame .hs-label,
+.hs-form-frame .hs-fieldtype-text label {
   color: var(--gray) !important;
   font-family: var(--font-body) !important;
   font-size: 0.82rem !important;
@@ -601,18 +601,18 @@ nav { max-width: 1180px; margin: 0 auto; padding: 0 28px; height: 70px; display:
   display: block !important;
   margin-bottom: 6px !important;
 }
-#hbspt-cta .hs-form-field input,
-#hbspt-cta .hs-form-field textarea,
-#hbspt-cta .hs-form-field select,
-#hbspt-cta .hs-input,
-#hbspt-cta input,
-#hbspt-cta textarea,
-#hbspt-cta select,
-#hbspt-cta .hs-form-field .hs-input,
-#hbspt-cta .hs-form-field .hs-input[type="text"],
-#hbspt-cta .hs-form-field .hs-input[type="email"],
-#hbspt-cta .hs-form-field .hs-input[type="tel"],
-#hbspt-cta .hs-form-field .hs-input[type="number"] {
+.hs-form-frame .hs-form-field input,
+.hs-form-frame .hs-form-field textarea,
+.hs-form-frame .hs-form-field select,
+.hs-form-frame .hs-input,
+.hs-form-frame input,
+.hs-form-frame textarea,
+.hs-form-frame select,
+.hs-form-frame .hs-form-field .hs-input,
+.hs-form-frame .hs-form-field .hs-input[type="text"],
+.hs-form-frame .hs-form-field .hs-input[type="email"],
+.hs-form-frame .hs-form-field .hs-input[type="tel"],
+.hs-form-frame .hs-form-field .hs-input[type="number"] {
   background: rgba(26,26,46,0.95) !important;
   border: 1px solid rgba(0,212,184,0.25) !important;
   border-radius: 12px !important;
@@ -620,35 +620,35 @@ nav { max-width: 1180px; margin: 0 auto; padding: 0 28px; height: 70px; display:
   font-family: var(--font-body) !important;
   padding: 13px 16px !important;
 }
-#hbspt-cta input::placeholder,
-#hbspt-cta textarea::placeholder,
-#hbspt-cta .hs-input::placeholder {
+.hs-form-frame input::placeholder,
+.hs-form-frame textarea::placeholder,
+.hs-form-frame .hs-input::placeholder {
   color: rgba(255,255,255,0.75) !important;
 }
-#hbspt-cta select {
+.hs-form-frame select {
   color: var(--white) !important;
 }
-#hbspt-cta .hs-error-msgs,
-#hbspt-cta .hs-error-msgs p,
-#hbspt-cta .hs-error-msg {
+.hs-form-frame .hs-error-msgs,
+.hs-form-frame .hs-error-msgs p,
+.hs-form-frame .hs-error-msg {
   color: #ffbaba !important;
 }
-#hbspt-cta .hs-fieldtype-text,
-#hbspt-cta .hs-fieldtype-email,
-#hbspt-cta .hs-fieldtype-phone,
-#hbspt-cta .hs-fieldtype-select,
-#hbspt-cta .hs-fieldtype-textarea {
+.hs-form-frame .hs-fieldtype-text,
+.hs-form-frame .hs-fieldtype-email,
+.hs-form-frame .hs-fieldtype-phone,
+.hs-form-frame .hs-fieldtype-select,
+.hs-form-frame .hs-fieldtype-textarea {
   display: block !important;
 }
 /* Asegurar que el texto de instrucción se ve */
-#hbspt-cta .hs-fieldtype-text .instruction,
-#hbspt-cta .hs-error-msgs {
+.hs-form-frame .hs-fieldtype-text .instruction,
+.hs-form-frame .hs-error-msgs {
   color: var(--gray) !important;
   font-size: 0.75rem !important;
 }
-#hbspt-cta .hs-button,
-#hbspt-cta input.hs-button,
-#hbspt-cta button.hs-button {
+.hs-form-frame .hs-button,
+.hs-form-frame input.hs-button,
+.hs-form-frame button.hs-button {
   background: var(--teal) !important;
   color: #0a1628 !important;
   font-family: var(--font-disp) !important;
@@ -662,27 +662,27 @@ nav { max-width: 1180px; margin: 0 auto; padding: 0 28px; height: 70px; display:
   cursor: pointer !important;
   margin-top: 12px !important;
 }
-#hbspt-cta .hs-field-desc {
+.hs-form-frame .hs-field-desc {
   color: rgba(255,255,255,0.7) !important;
 }
-#hbspt-cta .hs-form-field {
+.hs-form-frame .hs-form-field {
   margin-bottom: 1rem !important;
 }
-#hbspt-cta .hs-form-field input:focus,
-#hbspt-cta .hs-form-field textarea:focus,
-#hbspt-cta .hs-form-field select:focus,
-#hbspt-cta .hs-input:focus {
+.hs-form-frame .hs-form-field input:focus,
+.hs-form-frame .hs-form-field textarea:focus,
+.hs-form-frame .hs-form-field select:focus,
+.hs-form-frame .hs-input:focus {
   border-color: var(--teal) !important;
   box-shadow: 0 0 12px rgba(0,212,184,0.15) !important;
 }
 
 /* Selectores adicionales para asegurar visibilidad en HubSpot */
-#hbspt-cta .hs-form-field > label,
-#hbspt-cta .hs-fieldtype-text > label,
-#hbspt-cta .hs-fieldtype-email > label,
-#hbspt-cta .hs-fieldtype-phone > label,
-#hbspt-cta .hs-fieldtype-select > label,
-#hbspt-cta .hs-fieldtype-textarea > label {
+.hs-form-frame .hs-form-field > label,
+.hs-form-frame .hs-fieldtype-text > label,
+.hs-form-frame .hs-fieldtype-email > label,
+.hs-form-frame .hs-fieldtype-phone > label,
+.hs-form-frame .hs-fieldtype-select > label,
+.hs-form-frame .hs-fieldtype-textarea > label {
   color: var(--gray) !important;
   font-size: 0.82rem !important;
 }
