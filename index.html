@@ -22,6 +22,11 @@
       <img src="assets/images/Buho.png" alt="Tuttor-Up" class="nav-logo-img">
       TUTTOR<span>-UP</span>
     </a>
+
+    <button class="nav-toggle" type="button" aria-label="Abrir menú" aria-expanded="false">
+      <span></span>
+    </button>
+
     <ul class="nav-links">
       <li><a href="#beneficios">Beneficios</a></li>
       <li><a href="#producto">Cómo funciona</a></li>
@@ -440,8 +445,17 @@
     </div>
   </div>
 </section>
-
-
+<script>
+  const navToggle = document.querySelector('.nav-toggle');
+  const headerEl = document.querySelector('header');
+  if (navToggle && headerEl) {
+    navToggle.addEventListener('click', () => {
+      const expanded = navToggle.getAttribute('aria-expanded') === 'true';
+      navToggle.setAttribute('aria-expanded', String(!expanded));
+      headerEl.classList.toggle('nav-open');
+    });
+  }
+</script>
 <!-- ════════════════════════════════════════
      8. FAQ — MANEJO DE OBJECIONES
 ════════════════════════════════════════ -->
