@@ -667,7 +667,99 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
 });
 </script>
 
-<!-- Script de HubSpot se carga automáticamente con defer -->
+<!-- Script para manejar envío del formulario HubSpot -->
+<script>
+// Crear elemento de confirmación
+function mostrarConfirmacion() {
+  const confirmacion = document.createElement('div');
+  confirmacion.style.cssText = `
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: rgba(0, 212, 184, 0.95);
+    color: #0a1628;
+    padding: 20px 30px;
+    border-radius: 12px;
+    font-weight: 700;
+    z-index: 9999;
+    font-family: 'Space Grotesk', sans-serif;
+    box-shadow: 0 0 30px rgba(0, 212, 184, 0.4);
+    animation: slideIn 0.5s ease;
+  `;
+  confirmacion.textContent = '✅ ¡Registro exitoso! Recargando...';
+  document.body.appendChild(confirmacion);
+  
+  // Agregar animación
+  const style = document.createElement('style');
+  style.textContent = `
+    @keyframes slideIn {
+      from { transform: translateX(400px); opacity: 0; }
+      to { transform: translateX(0); opacity: 1; }
+    }
+  `;
+  document.head.appendChild(style);
+}
+
+// Esperar a que HubSpot esté disponible (carga con defer)
+window.addEventListener('load', function() {
+  // Buscar el formulario de HubSpot y escuchar envíos
+  const observer = new MutationObserver(function(mutations) {
+    const form = document.querySelector('.hs-form');
+    if (form) {
+      // El formulario fue inyectado por HubSpot
+      console.log('✅ Formulario HubSpot cargado exitosamente');
+      
+      // Método 1: Escuchar el evento de submit
+      form.addEventListener('submit', function(e) {
+        console.log('📤 Formulario enviado a HubSpot');
+        mostrarConfirmacion();
+        
+        // Esperar 3 segundos para que se procese en HubSpot
+        setTimeout(function() {
+          window.location.reload();
+        }, 3000);
+      }, true);
+      
+      observer.disconnect();
+    }
+  });
+  
+  // Observar cambios en el contenedor del formulario
+  const formContainer = document.querySelector('.hs-form-frame');
+  if (formContainer) {
+    observer.observe(formContainer, {
+      childList: true,
+      subtree: true
+    });
+  }
+  
+  // Método 2: Escuchar evento nativo si existe
+  if (window.hbspt && window.hbspt.forms) {
+    try {
+      window.hbspt.forms.onFormSubmit(function(form) {
+        console.log('✔️ HubSpot confirmó envío del formulario');
+        mostrarConfirmacion();
+        setTimeout(function() {
+          window.location.reload();
+        }, 3000);
+      });
+    } catch(err) {
+      console.warn('No fue posible registrar callback de HubSpot:', err);
+    }
+  }
+});
+
+// Fallback para cualquier formulario
+document.addEventListener('submit', function(e) {
+  if (e.target && (e.target.classList.contains('hs-form') || e.target.closest('.hs-form-frame'))) {
+    console.log('📨 Formulario enviado (fallback handler)');
+    mostrarConfirmacion();
+    setTimeout(function() {
+      window.location.reload();
+    }, 3000);
+  }
+}, true);
+</script>
 
 </body>
 </html>
