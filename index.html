@@ -6,8 +6,9 @@
 <title>Tuttor-Up | La plataforma educativa que te eleva</title>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-<!-- Se elimina el cargador global de HubSpot en <head> porque usamos el embed directo dentro del formulario -->
 <link rel="stylesheet" href="styles/styles.css">
+<!-- HubSpot forms embed script -->
+<script src="https://js.hsforms.net/forms/embed/51296735.js" defer></script>
 
 </head>
 <body>
@@ -82,7 +83,11 @@
       <div class="owl-glow-ring"></div>
       <div class="owl-glow-ring"></div>
       <div class="owl-center">
-        <div class="owl-body"></div>
+        <div class="owl-body">
+          <img src="assets/images/Buho.png" alt="Tuttor-Up"
+               style="width:110px;height:110px;object-fit:contain;
+                      filter:drop-shadow(0 0 20px rgba(0,212,184,0.4));">
+        </div>
       </div>
       <div class="fc">
         <h4>📐 Matemáticas</h4>
@@ -428,11 +433,9 @@
       <h2>Comienza tu viaje<br><span class="teal">educativo hoy.</span></h2>
       <p>Regístrate y recibe tu primera sesión de tutoría completamente gratuita. Sin tarjeta de crédito requerida.</p>
 
-      <!-- HubSpot form embed directo -->
-      <!-- Este fragmento reemplaza la integración previa de hbspt.forms.create y elimina el formulario manual de fallback -->
-      <script src="https://js.hsforms.net/forms/embed/51296735.js" defer></script>
+      <!-- HubSpot form container -->
       <div class="hs-form-frame" data-region="na1" data-form-id="98cd997f-f41b-462b-960c-1bbdf62d3bf1" data-portal-id="51296735"></div>
-      <!-- Fin del embed de HubSpot -->
+      <!-- Fin del contenedor de formulario -->
 
     </div>
   </div>
@@ -525,7 +528,10 @@
 <section id="prefooter">
   <div class="glow-blob"></div>
   <div class="wrapper pf-inner">
-    <span class="big-owl"></span>
+    <span class="big-owl">
+      <img src="assets/images/Buho.png" alt=""
+           style="width:80px;height:80px;object-fit:contain;">
+    </span>
     <h2>¿Listo para aprender<br><span class="teal">en otro nivel?</span></h2>
     <p>Únete a más de 5.000 estudiantes que ya están transformando sus notas y construyendo su futuro con Tuttor-Up.</p>
     <div class="pf-btns">
@@ -632,7 +638,7 @@
      SCRIPTS
 ════════════════════════════════════════ -->
 <script>
-/* ── HubSpot embed directo aplicado: no se usa hbspt.forms.create ni formulario manual de fallback ── */
+/* ── HubSpot embed inline: usamos hbspt.forms.create para cargar el formulario en esta página ── */
 /* ── FAQ TOGGLE ── */
 function toggleFaq(el) {
   const item = el.closest('.faq-item');
@@ -660,6 +666,8 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
   });
 });
 </script>
+
+<!-- Script de HubSpot se carga automáticamente con defer -->
 
 </body>
 </html>

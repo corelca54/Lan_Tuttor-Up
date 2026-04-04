@@ -579,13 +579,114 @@ nav { max-width: 1180px; margin: 0 auto; padding: 0 28px; height: 70px; display:
 .privacy-txt { font-size: 0.73rem; color: var(--gray); text-align: center; margin-top: 8px; }
 
 /* HubSpot custom overrides */
-#hbspt-cta .hs-form-field label { color: var(--gray) !important; font-family: var(--font-body) !important; font-size: 0.82rem !important; }
-#hbspt-cta .hs-input { background: rgba(26,26,46,0.8) !important; border: 1px solid rgba(0,212,184,0.2) !important; border-radius: 12px !important; color: var(--white) !important; font-family: var(--font-body) !important; padding: 13px 16px !important; }
-#hbspt-cta .hs-button { background: var(--teal) !important; color: #0a1628 !important; font-family: var(--font-disp) !important; font-weight: 800 !important; font-size: 0.9rem !important; letter-spacing: 0.06em !important; text-transform: uppercase !important; padding: 14px 36px !important; border-radius: 100px !important; border: none !important; cursor: pointer !important; margin-top: 12px !important; }
+#hbspt-cta,
+#hbspt-cta * {
+  box-sizing: border-box;
+}
+#hbspt-cta .hs-form-field label,
+#hbspt-cta label,
+#hbspt-cta .hs-form-field legend,
+#hbspt-cta .hs-form-field span,
+#hbspt-cta .hs-form-field p,
+#hbspt-cta .hs-form-field .hs-field-desc,
+#hbspt-cta .hs-form-field label span,
+#hbspt-cta .hs-form-field label strong,
+#hbspt-cta .hs-form-field label em,
+#hbspt-cta .hs-label,
+#hbspt-cta .hs-fieldtype-text label {
+  color: var(--gray) !important;
+  font-family: var(--font-body) !important;
+  font-size: 0.82rem !important;
+  opacity: 1 !important;
+  display: block !important;
+  margin-bottom: 6px !important;
+}
+#hbspt-cta .hs-form-field input,
+#hbspt-cta .hs-form-field textarea,
+#hbspt-cta .hs-form-field select,
+#hbspt-cta .hs-input,
+#hbspt-cta input,
+#hbspt-cta textarea,
+#hbspt-cta select,
+#hbspt-cta .hs-form-field .hs-input,
+#hbspt-cta .hs-form-field .hs-input[type="text"],
+#hbspt-cta .hs-form-field .hs-input[type="email"],
+#hbspt-cta .hs-form-field .hs-input[type="tel"],
+#hbspt-cta .hs-form-field .hs-input[type="number"] {
+  background: rgba(26,26,46,0.95) !important;
+  border: 1px solid rgba(0,212,184,0.25) !important;
+  border-radius: 12px !important;
+  color: var(--white) !important;
+  font-family: var(--font-body) !important;
+  padding: 13px 16px !important;
+}
+#hbspt-cta input::placeholder,
+#hbspt-cta textarea::placeholder,
+#hbspt-cta .hs-input::placeholder {
+  color: rgba(255,255,255,0.75) !important;
+}
+#hbspt-cta select {
+  color: var(--white) !important;
+}
+#hbspt-cta .hs-error-msgs,
+#hbspt-cta .hs-error-msgs p,
+#hbspt-cta .hs-error-msg {
+  color: #ffbaba !important;
+}
+#hbspt-cta .hs-fieldtype-text,
+#hbspt-cta .hs-fieldtype-email,
+#hbspt-cta .hs-fieldtype-phone,
+#hbspt-cta .hs-fieldtype-select,
+#hbspt-cta .hs-fieldtype-textarea {
+  display: block !important;
+}
+/* Asegurar que el texto de instrucción se ve */
+#hbspt-cta .hs-fieldtype-text .instruction,
+#hbspt-cta .hs-error-msgs {
+  color: var(--gray) !important;
+  font-size: 0.75rem !important;
+}
+#hbspt-cta .hs-button,
+#hbspt-cta input.hs-button,
+#hbspt-cta button.hs-button {
+  background: var(--teal) !important;
+  color: #0a1628 !important;
+  font-family: var(--font-disp) !important;
+  font-weight: 800 !important;
+  font-size: 0.9rem !important;
+  letter-spacing: 0.06em !important;
+  text-transform: uppercase !important;
+  padding: 14px 36px !important;
+  border-radius: 100px !important;
+  border: none !important;
+  cursor: pointer !important;
+  margin-top: 12px !important;
+}
+#hbspt-cta .hs-field-desc {
+  color: rgba(255,255,255,0.7) !important;
+}
+#hbspt-cta .hs-form-field {
+  margin-bottom: 1rem !important;
+}
+#hbspt-cta .hs-form-field input:focus,
+#hbspt-cta .hs-form-field textarea:focus,
+#hbspt-cta .hs-form-field select:focus,
+#hbspt-cta .hs-input:focus {
+  border-color: var(--teal) !important;
+  box-shadow: 0 0 12px rgba(0,212,184,0.15) !important;
+}
 
-/* ══════════════════════════════════════════
-   8. FAQ
-══════════════════════════════════════════ */
+/* Selectores adicionales para asegurar visibilidad en HubSpot */
+#hbspt-cta .hs-form-field > label,
+#hbspt-cta .hs-fieldtype-text > label,
+#hbspt-cta .hs-fieldtype-email > label,
+#hbspt-cta .hs-fieldtype-phone > label,
+#hbspt-cta .hs-fieldtype-select > label,
+#hbspt-cta .hs-fieldtype-textarea > label {
+  color: var(--gray) !important;
+  font-size: 0.82rem !important;
+}
+
 #faq { background: var(--bg-alt); }
 #faq .glow-blob { width:450px;height:450px; background:radial-gradient(circle,rgba(0,212,184,0.07) 0%,transparent 70%); top:-80px;left:-100px; }
 .faq-layout { display: grid; grid-template-columns: 1fr 1.7fr; gap: 80px; align-items: start; }
